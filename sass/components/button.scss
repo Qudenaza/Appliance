@@ -1,0 +1,19 @@
+.base-button {
+  display: inline-block;
+  padding: 10px;
+  color: $color-white;
+  border-radius: 5px;
+  background: $color-btn-base;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

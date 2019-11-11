@@ -1,0 +1,42 @@
+.socials {
+  display: flex;
+  margin: 10px 0;
+  list-style: none;
+
+  &__item {
+    margin-right: 10px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $color-btn-base;
+
+      .socials__logo {
+        fill: $color-btn-base;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+
+    }
+
+    &:focus {
+      opacity: 0.5;
+      outline: none;
+    }
+  }
+
+  &__logo {
+    transition: fill 0.3s ease;
+  }
+}

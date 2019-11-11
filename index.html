@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+  <title>Разработка сайта по ремонту бытовой техники</title>
+</head>
+<main class="main-content">
+  <section class="feedback">
+    <div class="container feedback__container">
+      <form action="#" method="post" class="feedback__form">
+        <div class="feedback__group feedback__group--name">
+          <label for="feedbackName" class="feedback__label">Как к вам обращаться? *</label>
+          <input type="text" class="feedback__input" name="feedback-name" id="feedbackName"
+            placeholder="Например: Сергей Иванов" required v-model="customerName">
+        </div>
+        <div class="feedback__group feedback__group--phone">
+          <label for="feedbackPhone" class="feedback__label">Ваш номер телефона *</label>
+          <input type="text" name="feedback-phone" id="feedbackPhone" data-type='tel' placeholder="+7 (___) ___-__-__"
+            class="feedback__input" required v-model="phoneNumber">
+          <div class="feedback__subgroup" v-if="showRecallNotice">
+            <h3 class="feedback__label">Когда вам удобно получить от нас звонок?</h3>
+            <ul class="feedback__list">
+              <li class="feedback__item">
+                <input type="radio" class="feedback__radio" name="recall-time" value="daytime" id="feedbackRadioDaytime"
+                  v-model="recallChoice">
+                <label class="feedback__radio-title" for="feedbackRadioDaytime">С 8:00 до 12:00</label>
+              </li>
+              <li class="feedback__item">
+                <input type="radio" class="feedback__radio" name="recall-time" value="afternoon"
+                  id="feedbackRadioAfternoon" v-model="recallChoice">
+                <label class="feedback__radio-title" for="feedbackRadioAfternoon">C 12:00 до 18:00</label>
+              </li>
+              <li class="feedback__item">
+                <input type="radio" class="feedback__radio" name="recall-time" value="anytime" id="feedbackRadioAnytime"
+                  v-model="recallChoice">
+                <label class="feedback__radio-title" for="feedbackRadioAnytime">В любое время</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="feedback__group">
+          <h2 class="feedback__label">По каким вопросам?</h2>
+          <ul class="feedback__list">
+            <li class="feedback__item">
+              <input type="radio" class="feedback__radio" name="contact-reason" value="needAppliance"
+                id="feedbackRadioFix" v-model="radioChoice" checked>
+              <label class="feedback__radio-title" for="feedbackRadioFix">Нужно починить прибор</label>
+            </li>
+            <li class="feedback__item">
+              <input type="radio" class="feedback__radio" name="contact-reason" value="otherQuestions"
+                id="feedbackRadioOther" v-model="radioChoice">
+              <label class="feedback__radio-title" for="feedbackRadioOther">По другим вопросам</label>
+            </li>
+          </ul>
+        </div>
+        <template v-if="otherQuestions">
+          <div class="feedback__group feedback__group--location">
+            <label for="feedbackLocation" class="feedback__label">Где вы находитесь?</label>
+            <input type="text" name="feedback-location" id="feedbackLocation" placeholder="Например: ул. Мира, 55"
+              class="feedback__input">
+          </div>
+          <div class="feedback__group">
+            <label for="feedbackTextarea" class="feedback__label">Опишите вашу проблему</label>
+            <textarea class="feedback__textarea" name="feedback-textarea" id="feedbackTextarea"
+              v-model="message"></textarea>
+          </div>
+        </template>
+        <template v-else>
+          <label for="feedbackTextarea" class="feedback__label">Напишите нам</label>
+          <textarea class="feedback__textarea" name="feedback-textarea" id="feedbackTextarea"
+            v-model="message"></textarea>
+        </template>
+
+        <!-- <div class="feedback__group">
+          <label for="feedbackName" class="feedback__label">Что у вас сломалось?</label>
+          <select class="js-choice">
+            <option value="fridger">Холодильник</option>
+            <option value="conditioner">Кондиционер</option>
+            <option value="dishwasher">Посудомоечная машина</option>
+            <option value="zavesa">Тепловая завеса</option>
+            <option value="plita">Электрическая плита</option>
+            <option value="other">Другое</option>
+          </select>
+        </div> -->
+        <span class="feedback__notice">* - пункты обязательные к заполнению</span>
+        <button class="feedback__btn base-button">Отправить</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <div class="footer__col">
+        <h3 class="footer__title">О нас</h3>
+        <p class="footer__text">
+          <span class="footer__company">«Название копании»</span>
+          Выбрав нас вы сделали большой шаг к быстрому и качественному ремонту вашей бытовой техники. Можете не
+          сомневаться, наши специалисты сделают все быстро и качественно.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__title">Мы ремонтируем</h3>
+        <ul class="footer__list">
+          <li class="footer__item"><a href="#" class="footer__link">Кондиционеры</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Холодильники</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Тепловые завесы</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Стиральные машины</a></li>
+          <li class="footer__item"><a href="#" class="footer__link">Электрические плиты</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__title">Обратная связь</h3>
+        <p class="footer__text">Вы можете оставить онлайн заявку и мы обязательно с вами свяжемся</p>
+        <a href="#" class="footer__btn base-button">Оставить заявку</a>
+      </div>
+      <div class="footer__col">
+        <h3 class="footer__title">Контакты</h3>
+        <a href="#" class="footer__tel">+7 (927)-422-223</a>
+        <ul class="socials">
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg height="20" viewBox="0 0 24 24" width="20" class="socials__logo" fill="#fff">
+                <path
+                  d="m12.145 19.5c3.472 0 2.234-2.198 2.502-2.83-.004-.472-.008-.926.008-1.202.22.062.739.325 1.811 1.367 1.655 1.67 2.078 2.665 3.415 2.665h2.461c.78 0 1.186-.323 1.389-.594.196-.262.388-.722.178-1.438-.549-1.724-3.751-4.701-3.95-5.015.03-.058.078-.135.103-.175h-.002c.632-.835 3.044-4.449 3.399-5.895.001-.002.002-.005.002-.008.192-.66.016-1.088-.166-1.33-.274-.362-.71-.545-1.299-.545h-2.461c-.824 0-1.449.415-1.765 1.172-.529 1.345-2.015 4.111-3.129 5.09-.034-1.387-.011-2.446.007-3.233.036-1.535.152-3.029-1.441-3.029h-3.868c-.998 0-1.953 1.09-.919 2.384.904 1.134.325 1.766.52 4.912-.76-.815-2.112-3.016-3.068-5.829-.268-.761-.674-1.466-1.817-1.466h-2.461c-.998 0-1.594.544-1.594 1.455 0 2.046 4.529 13.544 12.145 13.544zm-8.09-13.499c.217 0 .239 0 .4.457.979 2.883 3.175 7.149 4.779 7.149 1.205 0 1.205-1.235 1.205-1.7l-.001-3.702c-.066-1.225-.512-1.835-.805-2.205l3.508.004c.002.017-.02 4.095.01 5.083 0 1.403 1.114 2.207 2.853.447 1.835-2.071 3.104-5.167 3.155-5.293.075-.18.14-.241.376-.241h2.461.01c-.001.003-.001.006-.002.009-.225 1.05-2.446 4.396-3.189 5.435-.012.016-.023.033-.034.05-.327.534-.593 1.124.045 1.954h.001c.058.07.209.234.429.462.684.706 3.03 3.12 3.238 4.08-.138.022-.288.006-2.613.011-.495 0-.882-.74-2.359-2.23-1.328-1.292-2.19-1.82-2.975-1.82-1.524 0-1.413 1.237-1.399 2.733.005 1.622-.005 1.109.006 1.211-.089.035-.344.105-1.009.105-6.345 0-10.477-10.071-10.636-11.996.055-.005.812-.002 2.546-.003z" />
+              </svg>
+              <span class="visually-hidden">Мы вконтакте</span>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg x="0px" y="0px" width="15" height="15" viewBox="0 0 169.063 169.063" fill="#fff"
+                class="socials__logo">
+                <path d="M122.406,0H46.654C20.929,0,0,20.93,0,46.655v75.752c0,25.726,20.929,46.655,46.654,46.655h75.752
+                          c25.727,0,46.656-20.93,46.656-46.655V46.655C169.063,20.93,148.133,0,122.406,0z M154.063,122.407
+                          c0,17.455-14.201,31.655-31.656,31.655H46.654C29.2,154.063,15,139.862,15,122.407V46.655C15,29.201,29.2,15,46.654,15h75.752
+                          c17.455,0,31.656,14.201,31.656,31.655V122.407z" />
+                <path
+                  d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561
+                          C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561
+                          c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z" />
+                <path d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78
+                          c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78
+                          C135.661,29.421,132.821,28.251,129.921,28.251z" />
+              </svg>
+              <span class="visually-hidden">Мы в инстаграме</span>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.3 483.3" width="18" height="18" fill="#fff"
+                class="socials__logo">
+                <path d="M424.3,57.75H59.1c-32.6,0-59.1,26.5-59.1,59.1v249.6c0,32.6,26.5,59.1,59.1,59.1h365.1c32.6,0,59.1-26.5,59.1-59.1
+                    v-249.5C483.4,84.35,456.9,57.75,424.3,57.75z M456.4,366.45c0,17.7-14.4,32.1-32.1,32.1H59.1c-17.7,0-32.1-14.4-32.1-32.1v-249.5
+                    c0-17.7,14.4-32.1,32.1-32.1h365.1c17.7,0,32.1,14.4,32.1,32.1v249.5H456.4z" />
+                <path
+                  d="M304.8,238.55l118.2-106c5.5-5,6-13.5,1-19.1c-5-5.5-13.5-6-19.1-1l-163,146.3l-31.8-28.4c-0.1-0.1-0.2-0.2-0.2-0.3
+                    c-0.7-0.7-1.4-1.3-2.2-1.9L78.3,112.35c-5.6-5-14.1-4.5-19.1,1.1c-5,5.6-4.5,14.1,1.1,19.1l119.6,106.9L60.8,350.95
+                    c-5.4,5.1-5.7,13.6-0.6,19.1c2.7,2.8,6.3,4.3,9.9,4.3c3.3,0,6.6-1.2,9.2-3.6l120.9-113.1l32.8,29.3c2.6,2.3,5.8,3.4,9,3.4
+                    c3.2,0,6.5-1.2,9-3.5l33.7-30.2l120.2,114.2c2.6,2.5,6,3.7,9.3,3.7c3.6,0,7.1-1.4,9.8-4.2c5.1-5.4,4.9-14-0.5-19.1L304.8,238.55z" />
+              </svg>
+              <span class="visually-hidden">Напишите нам письмо</span>
+            </a>
+          </li>
+        </ul>
+        <span class="footer__text">Работаем по всей Казани</span>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <p class="footer__text">© «Наша компания» 2020</p>
+    </div>
+  </div>
+</footer>
+
+
+<script src="scripts/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="scripts/inputmask.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="scripts/scripts.js"></script>
+
+<body>
+
+</body>
+
+</html>
