@@ -1,0 +1,73 @@
+.header {
+  position: relative;
+  min-height: 100vh;
+  background: url('../images/header-background.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+
+  }
+
+  &__body {
+    margin-top: 180px;
+    position: relative;
+    padding: 0 20px;
+    z-index: 22;
+
+    @media(min-width: 768px) {
+      align-items: center;
+      padding: 0 40px;
+    }
+  }
+
+  &__col {
+    text-align: center;
+
+    @media(min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 500;
+    color: $color-white;
+
+    @media(min-width: 768px) {
+      font-size: 25px;
+    }
+
+    @media(min-width: 1440px) {
+      font-size: 50px;
+    }
+  }
+
+  &__button {
+    font-size: 16px;
+    text-transform: uppercase;
+    background: $color-blue;
+
+    @media(min-width: 1440px) {
+      font-size: 25px;
+    }
+  }
+
+  &__image {
+    @include fill-img;
+  }
+}
+
+.mock {
+  padding: 100px 0;
+  text-align: center;
+}

@@ -35,3 +35,75 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+.page-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 9999999;
+  background: #fff;
+  transition: .3s all ease;
+
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  &__body {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+
+  & svg {
+    position: absolute;
+    fill: #316ccd;
+    transform-origin: 50% 50%;
+  }
+
+  & .item1 {
+    top: 0;
+    left: 0;
+    animation: item-rotate 10s infinite;
+  }
+
+  & .item2 {
+    top: 32px;
+    left: 51px;
+    animation: item-rotate-reverse 10s infinite;
+  }
+
+  & .item3 {
+    top: 58px;
+    left: 18px;
+    animation: item-rotate 10s infinite;
+  }
+}
+
+@keyframes item-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes item-rotate-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
