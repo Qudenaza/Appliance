@@ -1,7 +1,7 @@
 'use strict';
 
 {
-  if (window.location.pathname == '/') {
+  if (window.location.href.includes('index.html')) {
     const app = new Vue({
       el: '.appliance',
       data: {
@@ -11,6 +11,16 @@
         washingSelected: false,
         curtainSelected: false,
       }
+    })
+
+
+    $('.slider').slick({
+      infinite: false,
+      arrows: false,
+      dots: false,
+      cancelable: false,
+      autoplay: true,
+      autoplaySpeed: 6000
     })
   }
 }
@@ -36,6 +46,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.querySelector('.page-loader');
 
+
     setTimeout(function () {
       preloader.classList.add('loaded')
     }, 2000);
@@ -43,7 +54,7 @@
 }
 
 {
-  if (window.location.pathname == '/form.html') {
+  if (window.location.href.includes('form.html')) {
     const app = new Vue({
       el: '.feedback',
       data: {
@@ -80,16 +91,6 @@
   }
 }
 
-{
-  $('.slider').slick({
-    infinite: false,
-    arrows: false,
-    dots: false,
-    cancelable: false,
-    autoplay: true,
-    autoplaySpeed: 6000
-  })
-}
 
 {
   // if (window.location.pathname = 'index.html') {

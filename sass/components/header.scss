@@ -2,6 +2,10 @@
   position: relative;
   min-height: 100vh;
 
+  &--form {
+    min-height: auto;
+  }
+
   &__body {
     height: calc(100% - 70px);
 
