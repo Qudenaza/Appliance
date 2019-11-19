@@ -1,6 +1,21 @@
 'use strict';
 
 {
+  if (window.location.pathname == '/') {
+    const app = new Vue({
+      el: '.appliance',
+      data: {
+        dishwasherSelected: false,
+        conditionerSelected: false,
+        fridgeSelected: false,
+        washingSelected: false,
+        curtainSelected: false,
+      }
+    })
+  }
+}
+
+{
   const navMain = document.querySelector('.page-nav'),
     navToggle = document.querySelector('.page-nav__toggle');
 
@@ -63,6 +78,17 @@
       }
     });
   }
+}
+
+{
+  $('.slider').slick({
+    infinite: false,
+    arrows: false,
+    dots: false,
+    cancelable: false,
+    autoplay: true,
+    autoplaySpeed: 6000
+  })
 }
 
 {

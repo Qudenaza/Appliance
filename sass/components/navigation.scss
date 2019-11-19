@@ -1,6 +1,6 @@
 .page-nav {
   position: relative;
-  z-index: 23;
+  z-index: 24;
   background: $color-dark;
 
   @media(min-width: 768px) {
@@ -89,7 +89,7 @@
 
   &__wrapper {
     display: block;
-    width: 70%;
+    width: 50%;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -99,7 +99,7 @@
     z-index: 23;
     background: $color-dark;
     transform: translateX(-101%);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
     @media(min-width: 768px) {
       display: block;
@@ -176,7 +176,21 @@
   }
 
   &--opened &__link {
-    animation: slideLeft 1s ease;
+    &--1 {
+      animation: slideLeft 0.7s ease;
+    }
+
+    &--2 {
+      animation: slideLeft 0.9s ease;
+    }
+
+    &--3 {
+      animation: slideLeft 1.1s ease;
+    }
+
+    &--4 {
+      animation: slideLeft 1.3s ease;
+    }
   }
 }
 
