@@ -1,5 +1,5 @@
-@import "base.scss";
 @import "variables.scss";
+@import "base.scss";
 @import "mixins.scss";
 
 @import "components/footer.scss";
@@ -7,8 +7,10 @@
 @import "components/button.scss";
 @import "components/form-elements.scss";
 @import "components/feedback.scss";
-@import "components/manufacturer.scss";
+@import "components/brands.scss";
 @import "components/header.scss";
 @import "components/navigation.scss";
 @import "components/workers.scss";
 @import "components/appliance.scss";
+@import "components/breadcrumbs.scss";
+@import "components/repair.scss";

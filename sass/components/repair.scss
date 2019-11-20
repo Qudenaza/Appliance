@@ -1,0 +1,80 @@
+.repair {
+  padding: 40px 20px;
+
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+    color: $color-dark;
+    text-align: center;
+
+    @media(min-width: 1440px) {
+      text-align: left;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+
+    @media(min-width: 1440px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    max-width: 710px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba($color-dark, 0.4);
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &--fridge {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/fridge.jpg');
+      background-size: cover;
+    }
+
+    &--dishwasher {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/dishwasher.jpg');
+      background-size: cover;
+    }
+
+    &--washer {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/washer.jpg');
+      background-size: cover;
+    }
+
+    &--conditioner {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/conditioner.jpg');
+      background-size: cover;
+    }
+  }
+
+  &__type {
+    position: relative;
+    font-size: 22px;
+    font-weight: 500;
+    color: $color-white;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 50px;
+      height: 2px;
+      background: $color-btn-base;
+      left: 0;
+      bottom: -20px;
+    }
+  }
+
+  &__text {
+    margin-top: 40px;
+    font-size: 20px;
+    color: $color-white;
+  }
+}

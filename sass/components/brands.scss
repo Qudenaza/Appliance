@@ -1,0 +1,29 @@
+.brands {
+  padding: 40px 20px;
+  background: $color-white;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    color: $color-dark;
+    text-align: center;
+
+    @media(min-width: 1440px) {
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    margin: 0 10px;
+
+    @media(min-width: 500px) {
+      margin: 0 40px;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,19 +1,7 @@
 'use strict';
 
 {
-  if (window.location.href.includes('index.html')) {
-    const app = new Vue({
-      el: '.appliance',
-      data: {
-        dishwasherSelected: false,
-        conditionerSelected: false,
-        fridgeSelected: false,
-        washingSelected: false,
-        curtainSelected: false,
-      }
-    })
-
-
+  if (document.querySelector('.slider')) {
     $('.slider').slick({
       infinite: false,
       arrows: false,
@@ -22,7 +10,19 @@
       autoplay: true,
       autoplaySpeed: 6000
     })
+
+    // new Vue({
+    //   el: '.appliance',
+    //   data: {
+    //     dishwasherSelected: false,
+    //     conditionerSelected: false,
+    //     fridgeSelected: false,
+    //     washingSelected: false,
+    //     curtainSelected: false,
+    //   }
+    // })
   }
+
 }
 
 {
@@ -54,8 +54,8 @@
 }
 
 {
-  if (window.location.href.includes('form.html')) {
-    const app = new Vue({
+  if (document.querySelector('.feedback')) {
+    new Vue({
       el: '.feedback',
       data: {
         customerName: '',
@@ -89,24 +89,25 @@
       }
     });
   }
+
 }
 
 
 {
-  // if (window.location.pathname = 'index.html') {
-  //   $('.manufacturer__wrapper').slick({
-  //     infinite: false,
-  //     arrows: false,
-  //     slidesToShow: 4,
-  //     // autoplay: true,
-  //     responsive: [
-  //       {
-  //         breakpoint: 400,
-  //         settings: {
-  //           slidesToShow: 1,
-  //         }
-  //       }
-  //     ]
-  //   });
-  // }
+  if (document.querySelector('.brands')) {
+    $('.brands__wrapper').slick({
+      infinite: false,
+      arrows: false,
+      slidesToShow: 4,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 400,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
+    });
+  }
 }

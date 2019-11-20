@@ -1,0 +1,39 @@
+.breadcrumbs {
+  display: flex;
+  padding: 0 20px;
+  list-style: none;
+
+  @media(min-width: 768px) {
+    font-size: 18px;
+  }
+
+  &__item {
+    position: relative;
+    color: $color-dark;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: -22px;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background: url('../images/arrow-right.svg') no-repeat;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-dark;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-btn-base;
+    }
+  }
+}

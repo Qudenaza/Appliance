@@ -4,23 +4,30 @@
 
   &--form {
     min-height: auto;
+
+    & .page-nav {
+      background: $color-dark;
+    }
   }
 
   &__body {
-    height: calc(100% - 70px);
+    height: 100%;
 
     & .container {
       position: relative;
       z-index: 23;
-      text-align: left;
+      text-align: center;
       transform: translateY(-100%);
       opacity: 0;
       transition: all 1s ease;
+
+      @media(min-width: 768px) {
+        text-align: left;
+      }
     }
 
     @media(min-width: 768px) {
-      align-items: center;
-      margin-top: -80px;
+      margin-top: -85px;
       height: 100vh;
     }
 
@@ -85,11 +92,8 @@
   &__slide {
     position: relative;
     height: 100%;
-    padding: 180px 20px 0 20px;
+    padding: 220px 20px 0 20px;
 
-    @media(min-width: 768px) {
-      padding-top: 200px;
-    }
 
     @media(min-width: 1440px) {
       padding-top: 300px;

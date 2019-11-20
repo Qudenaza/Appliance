@@ -90,6 +90,15 @@ body {
 
 .main-content {
   background: #f5f3ef;
+
+  &--form {
+    background: $color-white;
+    padding-top: 100px;
+
+    @media(min-width: 768px) {
+      padding-top: 40px;
+    }
+  }
 }
 
 @keyframes item-rotate {

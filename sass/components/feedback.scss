@@ -1,9 +1,17 @@
 .feedback {
-  padding: 40px 20px;
+  margin-top: 20px;
+  padding: 20px 0;
   background: $color-white;
+  border-top: 1px solid $color-border;
 
-  @media(min-width: 768px) {
-    padding: 80px 20px;
+  @media(min-width: 1440px) {
+    padding: 40px 0;
+    margin-top: 40px;
+
+  }
+
+  &__container {
+    padding: 0 20px;
   }
 
   &__group {
