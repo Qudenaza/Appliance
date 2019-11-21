@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>Прайс Лист</title>
 </head>
 
 <body>
@@ -52,81 +52,27 @@
       </div>
     </nav>
   </header>
-  <main class="main-content main-content--form">
+  <main class="main-content main-content--prices">
     <div class="container">
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Главная</a></li>
-        <li class="breadcrumbs__item">Форма обратной связи</li>
+        <li class="breadcrumbs__item">Прайс-лист</li>
       </ul>
     </div>
-    <section class="feedback">
-      <div class="container feedback__container">
-        <form action="#" method="post" class="feedback__form">
-          <div class="feedback__group feedback__group--name">
-            <label for="feedbackName" class="feedback__label">Как к вам обращаться? *</label>
-            <input type="text" class="feedback__input" name="feedback-name" id="feedbackName"
-              placeholder="Например: Сергей Иванов" required v-model="customerName">
-          </div>
-          <div class="feedback__group feedback__group--phone">
-            <label for="feedbackPhone" class="feedback__label">Ваш номер телефона *</label>
-            <input type="text" name="feedback-phone" id="feedbackPhone" data-type='tel' placeholder="+7 (___) ___-__-__"
-              class="feedback__input" required v-model="phoneNumber">
-            <div class="feedback__subgroup" v-if="showRecallNotice">
-              <h3 class="feedback__label">Когда вам удобно получить от нас звонок?</h3>
-              <ul class="feedback__list">
-                <li class="feedback__item">
-                  <input type="radio" class="feedback__radio" name="recall-time" value="daytime"
-                    id="feedbackRadioDaytime" v-model="recallChoice">
-                  <label class="feedback__radio-title" for="feedbackRadioDaytime">С 8:00 до 12:00</label>
-                </li>
-                <li class="feedback__item">
-                  <input type="radio" class="feedback__radio" name="recall-time" value="afternoon"
-                    id="feedbackRadioAfternoon" v-model="recallChoice">
-                  <label class="feedback__radio-title" for="feedbackRadioAfternoon">C 12:00 до 18:00</label>
-                </li>
-                <li class="feedback__item">
-                  <input type="radio" class="feedback__radio" name="recall-time" value="anytime"
-                    id="feedbackRadioAnytime" v-model="recallChoice">
-                  <label class="feedback__radio-title" for="feedbackRadioAnytime">В любое время</label>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="feedback__group">
-            <h2 class="feedback__label">По каким вопросам?</h2>
-            <ul class="feedback__list">
-              <li class="feedback__item">
-                <input type="radio" class="feedback__radio" name="contact-reason" value="needAppliance"
-                  id="feedbackRadioFix" v-model="radioChoice" checked>
-                <label class="feedback__radio-title" for="feedbackRadioFix">Нужно починить прибор</label>
-              </li>
-              <li class="feedback__item">
-                <input type="radio" class="feedback__radio" name="contact-reason" value="otherQuestions"
-                  id="feedbackRadioOther" v-model="radioChoice">
-                <label class="feedback__radio-title" for="feedbackRadioOther">По другим вопросам</label>
-              </li>
-            </ul>
-          </div>
-          <template v-if="otherQuestions">
-            <div class="feedback__group feedback__group--location">
-              <label for="feedbackLocation" class="feedback__label">Где вы находитесь?</label>
-              <input type="text" name="feedback-location" id="feedbackLocation" placeholder="Например: ул. Мира, 55"
-                class="feedback__input">
-            </div>
-            <div class="feedback__group">
-              <label for="feedbackTextarea" class="feedback__label">Опишите вашу проблему</label>
-              <textarea class="feedback__textarea" name="feedback-textarea" id="feedbackTextarea"
-                v-model="message"></textarea>
-            </div>
-          </template>
-          <template v-else>
-            <label for="feedbackTextarea" class="feedback__label">Напишите нам</label>
-            <textarea class="feedback__textarea" name="feedback-textarea" id="feedbackTextarea"
-              v-model="message"></textarea>
-          </template>
-          <span class="feedback__notice">* - пункты обязательные к заполнению</span>
-          <button class="feedback__btn base-button">Отправить</button>
-        </form>
+    <section class="prices">
+      <div class="container">
+        <header class="prices__header">
+          <blockquote class="prices__quote">“Для нас важна прозрачность &mdash; никаких скрытых платежей. ”</blockquote>
+        </header>
+        <div class="prices__body">
+          <h3 class="prices__title">Прайс-лист</h3>
+          <p class="prices__text">Мы предоставим вам полную диагностику, которая точно скажет вам, сколько будет стоить
+            ваш ремонт. Мы используем фиксированную ставку, которая предоставляет среднюю цену на наши услуги. Эта цена
+            говорит вам точно, сколько будет стоить ваш ремонт, ни больше, ни меньше. Это также означает, что наши
+            специалисты заинтересованы в том, чтобы не торопиться и убедиться, что ваш ремонт сделан правильно! Наши
+            цены состоят из платы за диагностику, труда и расходного материала (если необходимо).
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -213,10 +159,7 @@
       </div>
     </div>
   </footer>
-
   <script src="scripts/jquery.min.js"></script>
-  <script src="scripts/vue.min.js"></script>
-  <script src="scripts/inputmask.min.js"></script>
   <script src="scripts/scripts.js"></script>
 </body>
 

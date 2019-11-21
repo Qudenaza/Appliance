@@ -72,11 +72,11 @@ body {
 
 .main-content {
   background: #f5f3ef; }
-  .main-content--form {
+  .main-content--form, .main-content--prices {
     background: #fff;
     padding-top: 100px; }
     @media (min-width: 768px) {
-      .main-content--form {
+      .main-content--form, .main-content--prices {
         padding-top: 40px; } }
 
 @keyframes item-rotate {
@@ -828,3 +828,62 @@ textarea {
     margin-top: 40px;
     font-size: 20px;
     color: #fff; }
+
+.prices {
+  padding: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #e6e6e6; }
+  .prices__header {
+    margin-bottom: 20px; }
+  .prices__quote {
+    font-family: 'Georgia', sans-serif;
+    font-style: italic; }
+  .prices__title {
+    font-size: 20px;
+    font-weight: 500; }
+  .prices__text {
+    margin-top: 20px;
+    font-weight: 400; }
+
+.reviews {
+  padding: 40px 20px;
+  background: #fff; }
+  .reviews__header {
+    margin-bottom: 20px; }
+  .reviews__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 300; }
+  .reviews__subtitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400; }
+  .reviews__item {
+    position: relative;
+    padding: 15px;
+    border-radius: 5px;
+    background: #f6f6f6;
+    margin: 0 10px; }
+    .reviews__item:last-child {
+      margin-right: 0; }
+    .reviews__item::before {
+      position: absolute;
+      content: '';
+      top: 10px;
+      right: 10px;
+      width: 100px;
+      height: 100px;
+      background: url("../images/quote.svg") no-repeat;
+      opacity: 0.1; }
+  .reviews__quote {
+    color: #212121; }
+  .reviews__data {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; }
+  .reviews__image {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    border-radius: 50%; }

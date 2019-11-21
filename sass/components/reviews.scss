@@ -1,0 +1,63 @@
+.reviews {
+  padding: 40px 20px;
+  background: $color-white;
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+
+
+  &__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__item {
+    position: relative;
+    padding: 15px;
+    border-radius: 5px;
+    background: $color-grey-3;
+    margin: 0 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 10px;
+      right: 10px;
+      width: 100px;
+      height: 100px;
+      background: url('../images/quote.svg') no-repeat;
+      opacity: 0.1;
+    }
+  }
+
+  &__quote {
+    color: #212121;
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+}

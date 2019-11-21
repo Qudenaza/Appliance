@@ -111,3 +111,34 @@
     });
   }
 }
+
+{
+  if (document.querySelector('.reviews')) {
+    $('.reviews__body').slick({
+      infinite: false,
+      arrows: false,
+      slidesToShow: 3,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 1440,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+      ]
+    });
+  }
+}
