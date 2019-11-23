@@ -124,6 +124,8 @@
           breakpoint: 768,
           settings: {
             slidesToShow: 1,
+            fade: true,
+            speed: 2000
           }
         },
         {
@@ -136,6 +138,33 @@
           breakpoint: 1440,
           settings: {
             slidesToShow: 3,
+          }
+        },
+      ]
+    });
+  }
+}
+
+{
+  if (document.querySelector('.workers')) {
+    $('.workers__list').slick({
+      infinite: false,
+      arrows: false,
+      slidesToShow: 4,
+      // autoplay: true,
+      responsive: [
+        {
+          breakpoint: 650,
+          settings: {
+            slidesToShow: 1,
+            fade: true,
+            speed: 2000
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 2,
           }
         },
       ]

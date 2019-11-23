@@ -12,6 +12,10 @@ body {
   height: 100vh;
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('../images/header-slider-bg-1.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .main-content {
@@ -89,7 +93,6 @@ body {
 }
 
 .main-content {
-  background: #f5f3ef;
 
   &--form,
   &--prices {

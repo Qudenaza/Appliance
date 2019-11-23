@@ -6,8 +6,6 @@
     margin-bottom: 20px;
   }
 
-
-
   &__title {
     font-size: 12px;
     text-transform: uppercase;
@@ -23,13 +21,15 @@
 
   &__item {
     position: relative;
+    height: 220px;
     padding: 15px;
     border-radius: 5px;
     background: $color-grey-3;
-    margin: 0 10px;
 
-    &:last-child {
-      margin-right: 0;
+    @media(min-width: 768px) {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
     }
 
     &::before {

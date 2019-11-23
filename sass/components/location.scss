@@ -1,4 +1,4 @@
-.brands {
+.location {
   padding: 40px 20px;
   background: $color-white;
 
@@ -19,16 +19,11 @@
     font-weight: 400;
   }
 
-  &__logo {
-    margin: 0 10px;
-
-    @media(min-width: 500px) {
-      margin: 0 40px;
-    }
-  }
-
-  .slick-track {
-    display: flex;
-    align-items: center;
+  &__body {
+    margin: 0 -20px;
+    min-height: 50vw;
+    background: url('../images/map.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }

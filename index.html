@@ -51,7 +51,7 @@
             <li class="page-nav__item"><a href="price-list.html" class="page-nav__link page-nav__link--4">Прайс-лист</a>
             </li>
           </ul>
-          <a href="#" class="page-nav__phone base-button">Позвоните нам</a>
+          <!-- <a href="#" class="page-nav__phone base-button">Позвоните нам</a> -->
         </div>
       </div>
     </nav>
@@ -204,7 +204,10 @@
     </section> -->
     <section class="repair">
       <div class="container">
-        <h2 class="repair__title">Что у вас сломалось?</h2>
+        <header class="repair__header">
+          <h2 class="repair__title">Ремонт</h2>
+          <b class="repair__subtitle">Что у вас сломалось?</b>
+        </header>
         <div class="repair__wrapper">
           <div class="repair__item repair__item--fridge">
             <h3 class="repair__type">Холодильник</h3>
@@ -231,7 +234,10 @@
     </section>
     <section class="brands">
       <div class="container brands__container">
-        <h2 class="brands__title">Работаем с брендами</h2>
+        <header class="brands__header">
+          <h2 class="brands__title">Бренды</h2>
+          <b class="brands__subtitle">Мы работаем с этими брендами</b>
+        </header>
         <div class="brands__wrapper">
           <img src="images/electrolux.svg" alt="Логотип Электролюкс" class="brands__logo">
           <img src="images/bosch.svg" alt="Логотип Бош" class="brands__logo">
@@ -253,6 +259,14 @@
         </div>
       </div>
     </section>
+    <section class="cta">
+      <div class="container cta__wrapper">
+        <h3 class="cta__title">Доступные ремонтные решения</h3>
+        <p class="cta__text">Качественные и дружелюбные
+          услуги по справедливым ценам</p>
+        <a href="form.html" class="base-button cta__btn">Свяжитесь с нами</a>
+      </div>
+    </section>
     <section class="reviews">
       <div class="container">
         <header class="reviews__header">
@@ -262,8 +276,8 @@
         <div class="reviews__body">
           <div class="reviews__item">
             <blockquote class="reviews__quote">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nostrum nobis aperiam libero commodi et amet
-              nihil vel eius dolore labore nisi dicta saepe, rem voluptatibus obcaecati quos explicabo ab.
+              Купил шаурму на улице и принес домой, хотел подогреть, но микроволновка сломалась, обратился в компанию
+              ИТС сервис, приехал мастер и все пофиксил быстро и качественно
             </blockquote>
             <div class="reviews__data">
               <img class="reviews__image" src="images/oleg.jpg" alt="Сергей Петров">
@@ -272,8 +286,8 @@
           </div>
           <div class="reviews__item">
             <blockquote class="reviews__quote">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nostrum nobis aperiam libero commodi et amet
-              nihil vel eius dolore labore nisi dicta saepe, rem voluptatibus obcaecati quos explicabo ab.
+              У меня сломался холодильник, приезжал мастер все продиогностировал и починил, все работает. Огромное
+              спасибо вашей компании за качественный ремонт. Обязательно обращусь сного
             </blockquote>
             <div class="reviews__data">
               <img class="reviews__image" src="images/oleg.jpg" alt="Сергей Петров">
@@ -282,8 +296,8 @@
           </div>
           <div class="reviews__item">
             <blockquote class="reviews__quote">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nostrum nobis aperiam libero commodi et amet
-              nihil vel eius dolore labore nisi dicta saepe, rem voluptatibus obcaecati quos explicabo ab.
+              Сломался кондиционер, обратился в копанию ИТС Сервис, приехал мастер и все починил в кратчайшие сроки и по
+              низкой цене. Если что-то опять сломается обязательно обращусь к ним сного
             </blockquote>
             <div class="reviews__data">
               <img class="reviews__image" src="images/oleg.jpg" alt="Сергей Петров">
@@ -291,6 +305,53 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="location">
+      <div class="container">
+        <header class="location__header">
+          <h2 class="location__title">Местоположение</h2>
+          <b class="location__subtitle">Мы работаем по всей Казани</b>
+        </header>
+        <div class="location__body"></div>
+      </div>
+    </section>
+    <section class="workers">
+      <div class="container">
+        <header class="workers__header">
+          <h3 class="workers__title">Наши мастера</h3>
+          <b class="workers__subtitle">Люди стоящие за нашим успехом</b>
+        </header>
+        <ul class="workers__list">
+          <li class="workers__item">
+            <img class="workers__image" src="images/master.png" alt="Мастер Олег">
+            <b class="workers__name">Олег Васин</b>
+            <span class="workers__job">Мастер по ремонту</span>
+            <p class="workers__text">Олег - наш эксперт по обслуживанию различной бытовой техники. Имеет опыт предыдущей
+              работы в ведущих ремонтных компаниях.</p>
+          </li>
+          <li class="workers__item">
+            <img class="workers__image" src="images/master.png" alt="Мастер Олег">
+            <b class="workers__name">Иван Иванов</b>
+            <span class="workers__job">Электрик</span>
+            <p class="workers__text">Иван специализируется на ремонте электрических приборов и решении всех возможных
+              проблем с электричеством, с которыми вы можете столкнуться.</p>
+          </li>
+          <li class="workers__item">
+            <img class="workers__image" src="images/master.png" alt="Мастер Олег">
+            <b class="workers__name">Сергей Сергеев</b>
+            <span class="workers__job">Сантехник</span>
+            <p class="workers__text">Серпгей отвечает за поиск решения всех видов поломок труб, сантехники и отопления.
+            </p>
+          </li>
+          <li class="workers__item">
+            <img class="workers__image" src="images/master.png" alt="Мастер Олег">
+            <b class="workers__name">Пётр Петров</b>
+            <span class="workers__job">Мастер по ремонту</span>
+            <p class="workers__text">Пётр имеет более чем 7-летний опыт ремонта бытовой техники.Для него нет не решаемой
+              задачи.</p>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
