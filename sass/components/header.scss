@@ -2,7 +2,8 @@
   position: relative;
   min-height: 100vh;
 
-  &--form {
+  &--form,
+  &--about {
     min-height: auto;
 
     & .page-nav {
@@ -27,7 +28,7 @@
     }
 
     @media(min-width: 768px) {
-      margin-top: -85px;
+      margin-top: -80px;
       height: 100vh;
     }
 
@@ -69,6 +70,7 @@
     @media(min-width: 768px) {
       display: block;
       font-size: 18px;
+      margin-bottom: 30px;
     }
   }
 

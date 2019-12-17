@@ -18,6 +18,20 @@ body {
   background-attachment: fixed;
 }
 
+.shadow {
+  &::before {
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 222;
+    background: rgba(0, 0, 0, 0.6);
+    transition: background-color 1s ease;
+  }
+}
+
 .main-content {
   flex-grow: 1;
 }
@@ -95,7 +109,8 @@ body {
 .main-content {
 
   &--form,
-  &--prices {
+  &--prices,
+  &--about-us {
     background: $color-white;
     padding-top: 100px;
 
@@ -104,6 +119,27 @@ body {
     }
   }
 
+}
+
+.title {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  @media(min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.subtitle {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 400;
+
+  @media(min-width: 768px) {
+    font-size: 22px;
+  }
 }
 
 @keyframes item-rotate {

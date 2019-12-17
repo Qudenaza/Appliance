@@ -4,19 +4,10 @@
 
   &__header {
     margin-bottom: 20px;
-  }
 
-  &__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300;
-  }
-
-  &__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400;
+    @media(min-width: 768px) {
+      margin-bottom: 40px;
+    }
   }
 
   &__body {
@@ -25,5 +16,9 @@
     background: url('../images/map.jpg') no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media(min-width: 768px) {
+      min-height: 40vw;
+    }
   }
 }

@@ -16,6 +16,17 @@ body {
   background-position: center;
   background-attachment: fixed; }
 
+.shadow::before {
+  position: fixed;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 222;
+  background: rgba(0, 0, 0, 0.6);
+  transition: background-color 1s ease; }
+
 .main-content {
   flex-grow: 1; }
 
@@ -74,12 +85,29 @@ body {
     left: 18px;
     animation: item-rotate 10s infinite; }
 
-.main-content--form, .main-content--prices {
+.main-content--form, .main-content--prices, .main-content--about-us {
   background: #fff;
   padding-top: 100px; }
   @media (min-width: 768px) {
-    .main-content--form, .main-content--prices {
+    .main-content--form, .main-content--prices, .main-content--about-us {
       padding-top: 40px; } }
+
+.title {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 300; }
+  @media (min-width: 768px) {
+    .title {
+      font-size: 16px; } }
+
+.subtitle {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 400; }
+  @media (min-width: 768px) {
+    .subtitle {
+      font-size: 22px; } }
 
 @keyframes item-rotate {
   0% {
@@ -363,24 +391,22 @@ textarea {
         font-size: 20px; } }
 
 .brands {
-  padding: 40px 20px;
+  padding: 40px 20px 80px 20px;
   background: #fff; }
   .brands__header {
     margin-bottom: 20px; }
-  .brands__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300; }
-  .brands__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400; }
   .brands__logo {
     margin: 0 10px; }
     @media (min-width: 500px) {
       .brands__logo {
         margin: 0 40px; } }
+  .brands__text {
+    margin-top: 20px;
+    opacity: 0.5; }
+    @media (min-width: 1100px) {
+      .brands__text {
+        margin-top: 40px;
+        font-size: 20px; } }
   .brands .slick-track {
     display: flex;
     align-items: center; }
@@ -388,9 +414,9 @@ textarea {
 .header {
   position: relative;
   min-height: 100vh; }
-  .header--form {
+  .header--form, .header--about {
     min-height: auto; }
-    .header--form .page-nav {
+    .header--form .page-nav, .header--about .page-nav {
       background: #1d1d1d; }
   .header__body {
     height: 100%; }
@@ -406,7 +432,7 @@ textarea {
           text-align: left; } }
     @media (min-width: 768px) {
       .header__body {
-        margin-top: -85px;
+        margin-top: -80px;
         height: 100vh; } }
     @media (min-width: 1440px) {
       .header__body {
@@ -436,7 +462,8 @@ textarea {
     @media (min-width: 768px) {
       .header__text {
         display: block;
-        font-size: 18px; } }
+        font-size: 18px;
+        margin-bottom: 30px; } }
   .header__button {
     font-size: 16px;
     text-transform: uppercase;
@@ -645,18 +672,9 @@ textarea {
 
 .workers {
   padding: 40px 20px;
-  background: #fff; }
+  background: #f6f6f6; }
   .workers__header {
     margin-bottom: 20px; }
-  .workers__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300; }
-  .workers__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400; }
   .workers__item {
     overflow: hidden;
     padding: 20px;
@@ -797,15 +815,6 @@ textarea {
   background: #fff; }
   .repair__header {
     margin-bottom: 20px; }
-  .repair__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300; }
-  .repair__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400; }
   .repair__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -869,19 +878,13 @@ textarea {
     font-weight: 400; }
 
 .reviews {
-  padding: 40px 20px;
+  padding: 80px 20px 40px 20px;
   background: #fff; }
   .reviews__header {
     margin-bottom: 20px; }
-  .reviews__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300; }
-  .reviews__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400; }
+    @media (min-width: 768px) {
+      .reviews__header {
+        margin-bottom: 40px; } }
   .reviews__item {
     position: relative;
     height: 220px;
@@ -923,12 +926,24 @@ textarea {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 400; }
+    @media (min-width: 768px) {
+      .cta__title {
+        font-size: 16px; } }
+    @media (min-width: 1100px) {
+      .cta__title {
+        font-size: 20px; } }
   .cta__text {
     display: block;
     text-align: center;
     margin-top: 20px;
     font-size: 23px;
     font-weight: 400; }
+    @media (min-width: 768px) {
+      .cta__text {
+        font-size: 22px; } }
+    @media (min-width: 1100px) {
+      .cta__text {
+        font-size: 30px; } }
   .cta__btn {
     display: block;
     margin-top: 20px;
@@ -936,24 +951,69 @@ textarea {
     margin-right: auto;
     max-width: 150px;
     text-align: center; }
+    @media (min-width: 1100px) {
+      .cta__btn {
+        max-width: 200px;
+        margin-top: 30px;
+        font-size: 20px; } }
 
 .location {
   padding: 40px 20px;
   background: #fff; }
   .location__header {
     margin-bottom: 20px; }
-  .location__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300; }
-  .location__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400; }
+    @media (min-width: 768px) {
+      .location__header {
+        margin-bottom: 40px; } }
   .location__body {
     margin: 0 -20px;
     min-height: 50vw;
     background: url("../images/map.jpg") no-repeat;
     background-position: center;
     background-size: cover; }
+    @media (min-width: 768px) {
+      .location__body {
+        min-height: 40vw; } }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 222;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px; }
+  .modal__group {
+    margin-bottom: 20px; }
+  .modal__label {
+    display: block;
+    margin-bottom: 10px; }
+  .modal__submit {
+    width: 120px;
+    font-size: 16px; }
+  .modal__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer; }
+    .modal__close:hover::before, .modal__close:hover::after {
+      background: #13c0a2; }
+    .modal__close::before, .modal__close::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #1d1d1d;
+      transition: background-color 0.3s ease; }
+    .modal__close::before {
+      transform: rotate(45deg); }
+    .modal__close::after {
+      transform: rotate(-45deg); }

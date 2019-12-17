@@ -1,23 +1,15 @@
 .reviews {
-  padding: 40px 20px;
+  padding: 80px 20px 40px 20px;
   background: $color-white;
 
   &__header {
     margin-bottom: 20px;
+
+    @media(min-width: 768px) {
+      margin-bottom: 40px;
+    }
   }
 
-  &__title {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300;
-  }
-
-  &__subtitle {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400;
-  }
 
   &__item {
     position: relative;

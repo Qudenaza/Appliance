@@ -3,11 +3,11 @@
 {
   if (document.querySelector('.slider')) {
     $('.slider').slick({
-      infinite: false,
+      infinite: true,
       arrows: false,
       dots: false,
       cancelable: false,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 6000
     })
 
@@ -106,6 +106,18 @@
           settings: {
             slidesToShow: 1,
           }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 3,
+          }
         }
       ]
     });
@@ -115,7 +127,7 @@
 {
   if (document.querySelector('.reviews')) {
     $('.reviews__body').slick({
-      infinite: false,
+      infinite: true,
       arrows: false,
       slidesToShow: 3,
       autoplay: true,
@@ -169,5 +181,27 @@
         },
       ]
     });
+  }
+}
+
+{
+  if (document.querySelector('.modal')) {
+    const im = new Inputmask('+7 (999) 999-99-99', {
+      "clearIncomplete": true
+    }).mask('input[data-type="tel"]');
+
+    $('.js-open-modal').on('click', function (e) {
+      e.preventDefault();
+
+      document.body.classList.add('shadow');
+
+      $('.modal').fadeIn();
+    })
+
+    $('.js-modal-close').on('click', function () {
+      document.body.classList.remove('shadow');
+
+      $('.modal').fadeOut();
+    })
   }
 }
