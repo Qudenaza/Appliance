@@ -391,7 +391,7 @@ textarea {
         font-size: 20px; } }
 
 .brands {
-  padding: 40px 20px 80px 20px;
+  padding: 80px 20px 80px 20px;
   background: #fff; }
   .brands__header {
     margin-bottom: 20px; }
@@ -672,33 +672,44 @@ textarea {
 
 .workers {
   padding: 40px 20px;
-  background: #f6f6f6; }
+  background: #242424;
+  position: relative; }
+  .workers::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    transform: rotate(180deg);
+    background: url("../images/corner.svg") no-repeat; }
   .workers__header {
     margin-bottom: 20px; }
+  .workers__list {
+    margin-top: 60px; }
   .workers__item {
+    padding: 30px 0;
     overflow: hidden;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #e6e6e6; }
-    .workers__item:not(:last-child) {
-      margin-right: 20px; }
-  .workers__image {
-    width: 300px;
-    margin: 0 auto;
-    height: 300px;
-    border-radius: 5px; }
+    border-top: 2px solid #326dcd;
+    color: #fff;
+    background: url("../images/oleg.jpg") no-repeat;
+    background-position: right 20px;
+    background-size: 56px; }
   .workers__name {
     display: block;
-    margin-top: 40px;
     font-weight: 400;
     font-size: 20px; }
   .workers__job {
     display: block;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 14px;
     opacity: 0.5; }
+  .workers__title {
+    color: #fff; }
+  .workers__subtitle {
+    color: #fff; }
   .workers__text {
-    margin-top: 10px; }
+    margin-top: 30px; }
 
 .appliance {
   padding: 40px 20px; }
@@ -878,8 +889,11 @@ textarea {
     font-weight: 400; }
 
 .reviews {
-  padding: 80px 20px 40px 20px;
+  padding: 40px 20px 40px 20px;
   background: #fff; }
+  @media (min-width: 768px) {
+    .reviews {
+      padding: 80px 20px 80px 20px; } }
   .reviews__header {
     margin-bottom: 20px; }
     @media (min-width: 768px) {
@@ -958,7 +972,7 @@ textarea {
         font-size: 20px; } }
 
 .location {
-  padding: 40px 20px;
+  padding: 80px 20px 0px 20px;
   background: #fff; }
   .location__header {
     margin-bottom: 20px; }
@@ -974,6 +988,23 @@ textarea {
     @media (min-width: 768px) {
       .location__body {
         min-height: 40vw; } }
+
+.photos {
+  position: relative;
+  padding: 40px 20px;
+  background: #242424;
+  color: #fff; }
+  .photos::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    transform: rotate(180deg);
+    background: url("../images/corner.svg") no-repeat; }
+  .photos__body {
+    margin-top: 40px; }
 
 .modal {
   display: none;

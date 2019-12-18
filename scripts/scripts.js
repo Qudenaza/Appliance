@@ -3,11 +3,11 @@
 {
   if (document.querySelector('.slider')) {
     $('.slider').slick({
-      infinite: true,
+      infinite: false,
       arrows: false,
       dots: false,
       cancelable: false,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 6000
     })
 
@@ -158,30 +158,30 @@
 }
 
 {
-  if (document.querySelector('.workers')) {
-    $('.workers__list').slick({
-      infinite: false,
-      arrows: false,
-      slidesToShow: 4,
-      // autoplay: true,
-      responsive: [
-        {
-          breakpoint: 650,
-          settings: {
-            slidesToShow: 1,
-            fade: true,
-            speed: 2000
-          }
-        },
-        {
-          breakpoint: 1100,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-      ]
-    });
-  }
+  // if (document.querySelector('.workers')) {
+  //   $('.workers__list').slick({
+  //     infinite: false,
+  //     arrows: false,
+  //     slidesToShow: 4,
+  //     // autoplay: true,
+  //     responsive: [
+  //       {
+  //         breakpoint: 650,
+  //         settings: {
+  //           slidesToShow: 1,
+  //           fade: true,
+  //           speed: 2000
+  //         }
+  //       },
+  //       {
+  //         breakpoint: 1100,
+  //         settings: {
+  //           slidesToShow: 2,
+  //         }
+  //       },
+  //     ]
+  //   });
+  // }
 }
 
 {

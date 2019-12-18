@@ -1,6 +1,10 @@
 .reviews {
-  padding: 80px 20px 40px 20px;
+  padding: 40px 20px 40px 20px;
   background: $color-white;
+
+  @media(min-width: 768px) {
+    padding: 80px 20px 80px 20px;
+  }
 
   &__header {
     margin-bottom: 20px;
