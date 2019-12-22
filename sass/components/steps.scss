@@ -1,0 +1,52 @@
+.steps {
+  position: relative;
+  padding: 40px 20px;
+  background: #242424;
+  color: $color-white;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    transform: rotate(180deg);
+    background: url('../images/corner.svg') no-repeat;
+  }
+
+  &__body {
+    margin-top: 60px;
+  }
+
+  &__step {
+    padding: 60px 0;
+    margin-bottom: 30px;
+
+    &--1 {
+      background: url('../images/step-1.svg') no-repeat top center, url('../images/arrow-down.svg') no-repeat bottom center;
+      background-size: 50px;
+    }
+
+    &--2 {
+      background: url('../images/step-2.svg') no-repeat top center, url('../images/arrow-down.svg') no-repeat bottom center;
+      background-size: 50px;
+    }
+
+    &--3 {
+      background: url('../images/step-3.svg') no-repeat top center, url('../images/arrow-down.svg') no-repeat bottom center;
+      background-size: 50px;
+    }
+
+    &--4 {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      background: url('../images/step-4.svg') no-repeat top center;
+      background-size: 50px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+}

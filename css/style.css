@@ -989,12 +989,12 @@ textarea {
       .location__body {
         min-height: 40vw; } }
 
-.photos {
+.steps {
   position: relative;
   padding: 40px 20px;
   background: #242424;
   color: #fff; }
-  .photos::after {
+  .steps::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -1003,8 +1003,27 @@ textarea {
     left: 0;
     transform: rotate(180deg);
     background: url("../images/corner.svg") no-repeat; }
-  .photos__body {
-    margin-top: 40px; }
+  .steps__body {
+    margin-top: 60px; }
+  .steps__step {
+    padding: 60px 0;
+    margin-bottom: 30px; }
+    .steps__step--1 {
+      background: url("../images/step-1.svg") no-repeat top center, url("../images/arrow-down.svg") no-repeat bottom center;
+      background-size: 50px; }
+    .steps__step--2 {
+      background: url("../images/step-2.svg") no-repeat top center, url("../images/arrow-down.svg") no-repeat bottom center;
+      background-size: 50px; }
+    .steps__step--3 {
+      background: url("../images/step-3.svg") no-repeat top center, url("../images/arrow-down.svg") no-repeat bottom center;
+      background-size: 50px; }
+    .steps__step--4 {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      background: url("../images/step-4.svg") no-repeat top center;
+      background-size: 50px; }
+  .steps__text {
+    text-align: center; }
 
 .modal {
   display: none;
