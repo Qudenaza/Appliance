@@ -17,25 +17,78 @@
 
   &__body {
     margin-top: 60px;
+
+    @media(min-width: 1400px) {
+      display: flex;
+    }
   }
 
   &__step {
+    position: relative;
     padding: 60px 0;
     margin-bottom: 30px;
+
+    @media(min-width: 1400px) {
+      width: 25%;
+    }
 
     &--1 {
       background: url('../images/step-1.svg') no-repeat top center, url('../images/arrow-down.svg') no-repeat bottom center;
       background-size: 50px;
+
+      @media(min-width: 1400px) {
+        background: url('../images/step-1.svg') no-repeat top center;
+        background-size: 50px;
+
+        &::before {
+          content: '1';
+          position: absolute;
+          top: -50px;
+          left: 10%;
+          font-size: 160px;
+          opacity: 0.1;
+        }
+      }
     }
 
     &--2 {
       background: url('../images/step-2.svg') no-repeat top center, url('../images/arrow-down.svg') no-repeat bottom center;
       background-size: 50px;
+
+
+      @media(min-width: 1400px) {
+        background: url('../images/step-2.svg') no-repeat top center;
+        background-size: 50px;
+
+        &::before {
+          content: '2';
+          position: absolute;
+          top: -50px;
+          left: 10%;
+          font-size: 160px;
+          opacity: 0.1;
+        }
+      }
     }
 
     &--3 {
       background: url('../images/step-3.svg') no-repeat top center, url('../images/arrow-down.svg') no-repeat bottom center;
       background-size: 50px;
+
+
+      @media(min-width: 1400px) {
+        background: url('../images/step-3.svg') no-repeat top center;
+        background-size: 50px;
+
+        &::before {
+          content: '3';
+          position: absolute;
+          top: -50px;
+          left: 10%;
+          font-size: 160px;
+          opacity: 0.1;
+        }
+      }
     }
 
     &--4 {
@@ -43,6 +96,21 @@
       margin-bottom: 0;
       background: url('../images/step-4.svg') no-repeat top center;
       background-size: 50px;
+
+
+      @media(min-width: 1400px) {
+        background: url('../images/step-4.svg') no-repeat top center;
+        background-size: 50px;
+
+        &::before {
+          content: '4';
+          position: absolute;
+          top: -50px;
+          left: 10%;
+          font-size: 160px;
+          opacity: 0.1;
+        }
+      }
     }
   }
 

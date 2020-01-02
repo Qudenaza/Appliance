@@ -92,7 +92,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    width: 160px;
+    width: 210px;
     height: 100vh;
     padding-bottom: 20px;
     position: absolute;
@@ -150,6 +150,11 @@
     font-weight: 500;
     color: $color-white;
     text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $color-blue;
+    }
 
     @media(min-width: 1440px) {
       font-size: 20px;
@@ -157,15 +162,44 @@
   }
 
   &__phone {
-    max-width: 150px;
-    margin: auto auto 0 20px;
-    color: $color-white;
-    background: $color-blue;
-    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 400;
+
+    &--icon {
+      margin-right: 5px;
+    }
+  }
+
+  &__clock {
+    margin-right: 10px;
+  }
+
+  &__contacts {
+    margin-top: auto;
+    padding: 20px;
 
     @media(min-width: 768px) {
       display: none;
     }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: $color-white;
+    opacity: 0.8;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__email {
+    display: flex;
+    align-items: center;
+  }
+
+  &__mail {
+    margin-right: 10px;
   }
 
   &--opened &__burger {
@@ -206,6 +240,10 @@
     &--4 {
       animation: slideLeft 1.3s ease;
     }
+  }
+
+  &--opened &__contacts {
+    animation: slideLeft 1.5s ease;
   }
 }
 

@@ -1,0 +1,67 @@
+.about {
+  padding: 20px;
+  margin: 20px 0 20px 0;
+  border-top: 1px solid #e6e6e6;
+
+  &__text {
+    margin-top: 20px;
+  }
+}
+
+.achievments {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    text-align: center;
+
+    @media(min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 70px;
+    }
+  }
+
+  &__col {
+    margin-bottom: 30px;
+    padding: 10px 0;
+
+    @media(min-width: 768px) {
+      width: 200px;
+    }
+  }
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+
+    &--people {
+      background: url('../images/people.svg') no-repeat 100%;
+    }
+
+    &--years {
+      background: url('../images/success.svg') no-repeat 100%;
+      background-size: 100%;
+    }
+
+    &--repair {
+      background: url('../images/repair.svg') no-repeat 100%;
+    }
+
+  }
+
+  &__number {
+    display: block;
+    margin-top: 10px;
+
+    font-size: 40px;
+    color: $color-blue;
+  }
+
+  &__text {
+    margin-top: 10px;
+
+    font-size: 20px;
+  }
+}

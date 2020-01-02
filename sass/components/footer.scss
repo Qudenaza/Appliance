@@ -61,6 +61,11 @@
     color: $color-white;
     font-size: 14px;
     text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $color-blue;
+    }
   }
 
   &__btn {

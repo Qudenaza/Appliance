@@ -1,5 +1,23 @@
 'use strict';
 
+// GLOBAL
+
+
+window.addEventListener('scroll', function (e) {
+  if ($('.page-nav').hasClass('page-nav--opened')) {
+    closeNavbar();
+  }
+});
+
+function closeNavbar() {
+  const navigation = document.querySelector('.page-nav');
+
+  navigation.classList.add('page-nav--closed');
+  navigation.classList.remove('page-nav--opened');
+};
+
+// LOCAL
+
 {
   if (document.querySelector('.slider')) {
     $('.slider').slick({
@@ -10,20 +28,10 @@
       autoplay: true,
       autoplaySpeed: 6000
     })
-
-    // new Vue({
-    //   el: '.appliance',
-    //   data: {
-    //     dishwasherSelected: false,
-    //     conditionerSelected: false,
-    //     fridgeSelected: false,
-    //     washingSelected: false,
-    //     curtainSelected: false,
-    //   }
-    // })
   }
 
 }
+
 
 {
   const navMain = document.querySelector('.page-nav'),
@@ -214,4 +222,36 @@
       return false;
     });
   });
+}
+
+{
+  if (document.querySelector('.achievments')) {
+    function startAnimateNumbers(e) {
+      if ($(document).scrollTop() > 100) {
+        const numbers = document.querySelectorAll('.achievments__number');
+
+        const valueArray = [897, 8, 1403];
+
+        numbers.forEach((num, i) => {
+          $({
+            numberValue: $(num).text()
+          }).animate({
+            numberValue: valueArray[i]
+          }, {
+            duration: 500,
+            easing: 'swing',
+            step: val => {
+              $(num).html(Math.ceil(val));
+            }
+          });
+        });
+
+        document.removeEventListener('scroll', startAnimateNumbers);
+      };
+
+      return;
+    };
+
+    document.addEventListener('scroll', startAnimateNumbers);
+  };
 }

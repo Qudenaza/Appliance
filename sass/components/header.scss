@@ -1,6 +1,5 @@
 .header {
   position: relative;
-  min-height: 100vh;
 
   &--form,
   &--about {
@@ -12,37 +11,40 @@
   }
 
   &__body {
-    height: 100%;
+    margin-top: 70px;
+    height: 400px;
 
     & .container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
       position: relative;
       z-index: 23;
-      text-align: center;
-      transform: translateY(-100%);
+      transform: translateX(-100%);
       opacity: 0;
       transition: all 1s ease;
+      pointer-events: none;
 
       @media(min-width: 768px) {
-        text-align: left;
+        align-items: flex-start;
       }
     }
 
     @media(min-width: 768px) {
       margin-top: -80px;
-      height: 100vh;
+      height: 600px;
     }
 
     @media(min-width: 1440px) {
       margin-top: -90px;
+      height: 800px;
     }
   }
 
   &__col {
     text-align: center;
-
-    @media(min-width: 768px) {
-      text-align: left;
-    }
   }
 
   &__title {
@@ -66,6 +68,7 @@
     max-width: 550px;
     font-size: 20px;
     color: $color-white;
+    text-align: left;
 
     @media(min-width: 768px) {
       display: block;
@@ -75,6 +78,7 @@
   }
 
   &__button {
+    max-width: 180px;
     font-size: 16px;
     text-transform: uppercase;
     background: $color-blue;
@@ -94,12 +98,7 @@
   &__slide {
     position: relative;
     height: 100%;
-    padding: 220px 20px 0 20px;
-
-
-    @media(min-width: 1440px) {
-      padding-top: 300px;
-    }
+    padding: 20px;
 
     &::after {
       position: absolute;
@@ -143,7 +142,9 @@
   }
 
   & .slick-current .container {
-    transform: translateY(0);
+    display: flex;
+    transform: translateX(0);
     opacity: 1;
+    pointer-events: all;
   }
 }
