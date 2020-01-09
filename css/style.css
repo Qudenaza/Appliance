@@ -725,7 +725,7 @@ textarea {
     overflow: hidden;
     border-top: 2px solid #326dcd;
     color: #fff;
-    background: url("../images/oleg.jpg") no-repeat;
+    background: url("../images/appliance-master.png") no-repeat;
     background-position: right 20px;
     background-size: 56px; }
     @media (min-width: 1100px) {
@@ -1011,49 +1011,67 @@ textarea {
 .about {
   padding: 20px;
   margin: 20px 0 20px 0;
-  border-top: 1px solid #e6e6e6; }
+  border-top: 1px solid #e6e6e6;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6; }
+  @media (min-width: 768px) {
+    .about {
+      padding: 40px 20px;
+      text-align: left; } }
+  .about__title {
+    font-size: 25px;
+    font-weight: 500; }
+    @media (min-width: 1100px) {
+      .about__title {
+        font-size: 25px; } }
+  .about__subtitle {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 23px;
+    font-weight: 500; }
   .about__text {
-    margin-top: 20px; }
+    margin-top: 20px;
+    color: #686868; }
+    @media (min-width: 1100px) {
+      .about__text {
+        font-size: 20px; } }
 
-.achievments__wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  text-align: center; }
-  @media (min-width: 768px) {
-    .achievments__wrapper {
-      flex-direction: row;
-      justify-content: space-around;
-      margin-top: 70px; } }
-
-.achievments__col {
-  margin-bottom: 30px;
-  padding: 10px 0; }
-  @media (min-width: 768px) {
-    .achievments__col {
-      width: 200px; } }
-
-.achievments__image {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto; }
-  .achievments__image--people {
-    background: url("../images/people.svg") no-repeat 100%; }
-  .achievments__image--years {
-    background: url("../images/success.svg") no-repeat 100%;
-    background-size: 100%; }
-  .achievments__image--repair {
-    background: url("../images/repair.svg") no-repeat 100%; }
-
-.achievments__number {
-  display: block;
-  margin-top: 10px;
-  font-size: 40px;
-  color: #326dcd; }
-
-.achievments__text {
-  margin-top: 10px;
-  font-size: 20px; }
+.achievments {
+  padding: 20px 0;
+  background-color: #f6f6f6; }
+  .achievments__wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .achievments__wrapper {
+        flex-direction: row;
+        justify-content: space-around; } }
+  .achievments__col {
+    margin-bottom: 30px;
+    padding: 10px 0; }
+    @media (min-width: 768px) {
+      .achievments__col {
+        width: 200px;
+        margin-bottom: 0; } }
+  .achievments__image {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto; }
+    .achievments__image--people {
+      background: url("../images/people.svg") no-repeat 100%; }
+    .achievments__image--years {
+      background: url("../images/success.svg") no-repeat 100%;
+      background-size: 100%; }
+    .achievments__image--repair {
+      background: url("../images/repair.svg") no-repeat 100%; }
+  .achievments__number {
+    display: block;
+    margin-top: 10px;
+    font-size: 30px;
+    color: #326dcd; }
+  .achievments__text {
+    font-size: 20px; }
 
 .location {
   padding: 80px 20px 0px 20px;

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
 
   <title>О компании</title>
@@ -112,30 +113,86 @@
     </div>
     <section class="about">
       <div class="container">
-        <h2 class="title">О компании</h2>
-        <p class="about__text">Компания «ИТС Сервис» Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-          vero tempore modi temporibus veritatis perspiciatis doloribus impedit non, quis eaque alias laboriosam eveniet
-          amet repudiandae. Veniam vel officiis perferendis aliquid.</p>
+        <h2 class="title about__title">О нас</h2>
+        <h3 class="about__subtitle">Традиции качества</h3>
+        <p class="about__text">Компания «ИТС Сервис» работает с 2012 года. Мы являемся не крупной компанией, а это
+          означает что клиенты получают более качественное обслуживание чем во франшизе или крупной корпорации.</p>
+        <p class="about__text">Наша цель - качественное обслуживание и удовлетворение потребностей клиентов. Это
+          достигается с помощью нашей высококвалифицированной профессиональной команды мастеров, главная цель которой -
+          удовлетворить ваши потребности.</p>
       </div>
-      <section class="achievments">
-        <div class="achievments__wrapper">
-          <div class="achievments__col">
-            <div class="achievments__image achievments__image--people"></div>
-            <span class="achievments__number">0</span>
-            <p class="achievments__text">Довольных клиентов</p>
+
+    </section>
+    <section class="reviews">
+      <div class="container">
+        <header class="reviews__header">
+          <h2 class="title reviews__title">Отзывы</h2>
+          <b class="subtitle reviews__subtitle">Что клиенты пишут о нашей компании</b>
+        </header>
+        <div class="reviews__body">
+          <div class="reviews__item">
+            <blockquote class="reviews__quote">
+              Я очень рекомендую эту компанию. У меня сломалась стиральная машина, приехали мастера и быстро её
+              отремонтировали. Спасибо вам за такую профессиональную работу!
+            </blockquote>
+            <div class="reviews__data">
+              <img class="reviews__image" src="images/client-1.png" alt="Владислав Измайлов">
+              <p class="reviews__name">Владислав Измайлов</p>
+            </div>
           </div>
-          <div class="achievments__col">
-            <div class="achievments__image achievments__image--years"></div>
-            <span class="achievments__number">0</span>
-            <p class="achievments__text">Лет работы</p>
+          <div class="reviews__item">
+            <blockquote class="reviews__quote">
+              У меня сломался холодильник, приезжал мастер все продиогностировал и починил, все работает. Огромное
+              спасибо вашей компании за качественный ремонт.
+            </blockquote>
+            <div class="reviews__data">
+              <img class="reviews__image" src="images/client-2.jpg" alt="Ярослав Шепелев">
+              <p class="reviews__name">Ярослав Шепелев</p>
+            </div>
           </div>
-          <div class="achievments__col">
-            <div class="achievments__image achievments__image--repair"></div>
-            <span class="achievments__number">0</span>
-            <p class="achievments__text">Отремонтированной техники</p>
+          <div class="reviews__item">
+            <blockquote class="reviews__quote">
+              Сломался кондиционер, обратился в компанию ИТС Сервис, приехал мастер и все починил в кратчайшие сроки и
+              по
+              низкой цене. Спасибо вам огромное!
+            </blockquote>
+            <div class="reviews__data">
+              <img class="reviews__image" src="images/client-3.jpg" alt="Борис Щербинин">
+              <p class="reviews__name">Борис Щербинин</p>
+            </div>
+          </div>
+          <div class="reviews__item">
+            <blockquote class="reviews__quote">
+              Я просто хотел поблагодарить ваших мастеров за то, что они исправили проблему и проделали большую
+              работу.
+              Спасибо за оперативное обслуживание и выполнение ремонта.
+            </blockquote>
+            <div class="reviews__data">
+              <img class="reviews__image" src="images/client-4.jpg" alt="Сергей Ли">
+              <p class="reviews__name">Сергей Ли</p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <section class="achievments" id="achievments">
+      <div class="achievments__wrapper">
+        <div class="achievments__col">
+          <div class="achievments__image achievments__image--people"></div>
+          <span class="achievments__number">897</span>
+          <p class="achievments__text">Довольных клиентов</p>
+        </div>
+        <div class="achievments__col">
+          <div class="achievments__image achievments__image--years"></div>
+          <span class="achievments__number">8</span>
+          <p class="achievments__text">Лет работы</p>
+        </div>
+        <div class="achievments__col">
+          <div class="achievments__image achievments__image--repair"></div>
+          <span class="achievments__number">1498</span>
+          <p class="achievments__text">Отремонтированной техники</p>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer">
@@ -222,5 +279,6 @@
     </div>
   </footer>
   <script src="scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="scripts/scripts.js"></script>
 </body>

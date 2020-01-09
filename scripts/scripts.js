@@ -223,35 +223,3 @@ function closeNavbar() {
     });
   });
 }
-
-{
-  if (document.querySelector('.achievments')) {
-    function startAnimateNumbers(e) {
-      if ($(document).scrollTop() > 100) {
-        const numbers = document.querySelectorAll('.achievments__number');
-
-        const valueArray = [897, 8, 1403];
-
-        numbers.forEach((num, i) => {
-          $({
-            numberValue: $(num).text()
-          }).animate({
-            numberValue: valueArray[i]
-          }, {
-            duration: 500,
-            easing: 'swing',
-            step: val => {
-              $(num).html(Math.ceil(val));
-            }
-          });
-        });
-
-        document.removeEventListener('scroll', startAnimateNumbers);
-      };
-
-      return;
-    };
-
-    document.addEventListener('scroll', startAnimateNumbers);
-  };
-}
