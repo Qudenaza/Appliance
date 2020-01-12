@@ -85,11 +85,11 @@ body {
     left: 18px;
     animation: item-rotate 10s infinite; }
 
-.main-content--form, .main-content--prices, .main-content--about-us {
+.main-content--form, .main-content--prices, .main-content--about-us, .main-content--repair {
   background: #fff;
   padding-top: 100px; }
   @media (min-width: 768px) {
-    .main-content--form, .main-content--prices, .main-content--about-us {
+    .main-content--form, .main-content--prices, .main-content--about-us, .main-content--repair {
       padding-top: 40px; } }
 
 .title {
@@ -416,9 +416,9 @@ textarea {
 
 .header {
   position: relative; }
-  .header--form, .header--about {
+  .header--form, .header--about, .header--repair {
     min-height: auto; }
-    .header--form .page-nav, .header--about .page-nav {
+    .header--form .page-nav, .header--about .page-nav, .header--repair .page-nav {
       background: #1d1d1d; }
   .header__body {
     margin-top: 70px;
@@ -748,86 +748,58 @@ textarea {
     margin-top: 30px; }
 
 .appliance {
-  padding: 40px 20px; }
-  .appliance__header {
-    padding: 40px 0; }
-  .appliance__title {
-    font-size: 30px;
-    font-weight: 500;
-    color: #1d1d1d;
-    text-align: center; }
-    @media (min-width: 1440px) {
-      .appliance__title {
-        text-align: left; } }
-  .appliance__body {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; }
-    @media (min-width: 1440px) {
-      .appliance__body {
-        justify-content: space-between; } }
-  .appliance__checkbox {
-    display: none; }
+  background: #fff;
+  margin-top: 30px;
+  padding-top: 40px;
+  border-top: 1px solid #e6e6e6; }
   .appliance__item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    min-height: 280px;
-    padding: 10px;
-    margin: 0 20px 20px 20px;
-    background: #fff;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    margin-bottom: 20px; }
     @media (min-width: 1100px) {
-      .appliance__item:hover {
-        cursor: pointer;
-        box-shadow: 0 0 10px rgba(19, 192, 162, 0.8); } }
-    .appliance__item:active {
-      transform: scale(0.98); }
-    .appliance__item:focus {
-      outline: none; }
-    .appliance__item--active {
-      border: 4px solid #13c0a2; }
-      .appliance__item--active::before {
-        position: absolute;
-        content: '';
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: linear-gradient(to right, #11dab7, #13c0a2); }
-      .appliance__item--active::after {
-        position: absolute;
-        content: '';
-        top: 15px;
-        right: 15px;
-        width: 20px;
-        height: 20px;
-        background: url("../images/correct.svg"); }
-      .appliance__item--active .appliance__type {
-        color: #13c0a2; }
-      .appliance__item--active svg {
-        fill: #13c0a2; }
-    @media (min-width: 1440px) {
       .appliance__item {
+        display: flex;
         margin: 0; } }
-  .appliance__type {
-    margin-top: 15px;
-    color: #737679;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-    transition: color 0.3s ease; }
+    @media (min-width: 1100px) {
+      .appliance__item--reversed {
+        display: flex;
+        flex-direction: row-reverse; } }
+  .appliance__col {
+    padding: 20px;
+    text-align: center; }
+    @media (min-width: 1100px) {
+      .appliance__col {
+        padding: 100px 40px;
+        width: 50%; } }
+    .appliance__col--image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right bottom, #326dcd, #42aaff); }
+  .appliance__image {
+    width: 70px;
+    height: 70px; }
+    @media (min-width: 1100px) {
+      .appliance__image {
+        width: 200px;
+        height: 200px; } }
+  .appliance__title {
+    text-align: center;
+    font-weight: 500; }
+    @media (min-width: 1100px) {
+      .appliance__title {
+        font-size: 30px; } }
+  .appliance__text {
+    margin: 20px 0;
+    line-height: 1.6; }
+    @media (min-width: 1100px) {
+      .appliance__text {
+        font-size: 20px; } }
+    .appliance__text--problems {
+      opacity: 0.6; }
   .appliance__button {
-    display: block;
-    margin: 40px auto 0 auto;
     font-size: 18px; }
-  .appliance svg {
-    transition: fill 0.3s ease; }
+    @media (min-width: 1100px) {
+      .appliance__button {
+        font-size: 20px; } }
 
 .breadcrumbs {
   display: flex;
@@ -875,7 +847,8 @@ textarea {
     height: 350px;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px 0 rgba(29, 29, 29, 0.4); }
+    box-shadow: 0 0 10px 0 rgba(29, 29, 29, 0.4);
+    text-decoration: none; }
     .repair__item:not(:last-child) {
       margin-bottom: 20px; }
     .repair__item--fridge {

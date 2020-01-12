@@ -1,118 +1,79 @@
 .appliance {
-  padding: 40px 20px;
+  background: $color-white;
+  margin-top: 30px;
+  padding-top: 40px;
+  border-top: 1px solid #e6e6e6;
 
-  &__header {
-    padding: 40px 0;
+  &__item {
+    margin-bottom: 20px;
+
+    @media(min-width: 1100px) {
+      display: flex;
+      margin: 0;
+    }
+
+    &--reversed {
+      @media(min-width: 1100px) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__col {
+    padding: 20px;
+    text-align: center;
+
+    @media(min-width: 1100px) {
+      padding: 100px 40px;
+      width: 50%;
+    }
+
+    &--image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right bottom, $color-blue, #42aaff);
+    }
+  }
+
+  &__image {
+    width: 70px;
+    height: 70px;
+
+    @media(min-width: 1100px) {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   &__title {
-    font-size: 30px;
-    font-weight: 500;
-    color: $color-dark;
     text-align: center;
+    font-weight: 500;
 
-    @media(min-width: 1440px) {
-      text-align: left;
+    @media(min-width: 1100px) {
+      font-size: 30px;
     }
   }
 
-  &__body {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  &__text {
+    margin: 20px 0;
+    line-height: 1.6;
 
-    @media(min-width: 1440px) {
-      justify-content: space-between;
-    }
-  }
-
-  &__checkbox {
-    display: none;
-  }
-
-  &__item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 250px;
-    min-height: 280px;
-    padding: 10px;
-    margin: 0 20px 20px 20px;
-    background: $color-white;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      @media(min-width: 1100px) {
-        cursor: pointer;
-        box-shadow: 0 0 10px rgba($color-btn-base, 0.8);
-      }
+    @media(min-width: 1100px) {
+      font-size: 20px;
     }
 
-    &:active {
-      transform: scale(0.98);
+    &--problems {
+      opacity: 0.6;
     }
-
-    &:focus {
-      outline: none;
-    }
-
-    &--active {
-      border: 4px solid $color-btn-base;
-
-      &::before {
-        position: absolute;
-        content: '';
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: linear-gradient(to right, #11dab7, $color-btn-base);
-      }
-
-      &::after {
-        position: absolute;
-        content: '';
-        top: 15px;
-        right: 15px;
-        width: 20px;
-        height: 20px;
-        background: url('../images/correct.svg');
-      }
-
-      .appliance__type {
-        color: $color-btn-base;
-      }
-
-      svg {
-        fill: $color-btn-base;
-      }
-    }
-
-    @media(min-width: 1440px) {
-      margin: 0;
-    }
-  }
-
-  &__type {
-    margin-top: 15px;
-    color: $color-grey-2;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-    transition: color 0.3s ease;
   }
 
   &__button {
-    display: block;
-    margin: 40px auto 0 auto;
     font-size: 18px;
-  }
 
-  svg {
-    transition: fill 0.3s ease;
+    @media(min-width: 1100px) {
+      font-size: 20px;
+    }
   }
 }
