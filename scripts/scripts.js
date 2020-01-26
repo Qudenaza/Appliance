@@ -1,54 +1,6 @@
 'use strict';
 
-// GLOBAL
-
-
-window.addEventListener('scroll', function (e) {
-  if ($('.page-nav').hasClass('page-nav--opened')) {
-    closeNavbar();
-  }
-});
-
-function closeNavbar() {
-  const navigation = document.querySelector('.page-nav');
-
-  navigation.classList.add('page-nav--closed');
-  navigation.classList.remove('page-nav--opened');
-};
-
-// LOCAL
-
-{
-  if (document.querySelector('.slider')) {
-    $('.slider').slick({
-      infinite: false,
-      arrows: false,
-      dots: false,
-      cancelable: false,
-      autoplay: true,
-      autoplaySpeed: 6000
-    })
-  }
-
-}
-
-
-{
-  const navMain = document.querySelector('.page-nav'),
-    navToggle = document.querySelector('.page-nav__toggle');
-
-  navMain.classList.remove('page-nav--nojs');
-
-  navToggle.addEventListener('click', function () {
-    if (navMain.classList.contains('page-nav--closed')) {
-      navMain.classList.remove('page-nav--closed');
-      navMain.classList.add('page-nav--opened');
-    } else {
-      navMain.classList.add('page-nav--closed');
-      navMain.classList.remove('page-nav--opened');
-    }
-  });
-}
+// ПРЕЛОАДЕР
 
 {
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,6 +13,42 @@ function closeNavbar() {
   })
 }
 
+
+// СЛАЙДЕР БРЕНДОВ (INDEX.HTML)
+{
+  if (document.querySelector('.brands')) {
+    $('.brands__wrapper').slick({
+      infinite: false,
+      arrows: false,
+      slidesToShow: 4,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 400,
+          settings: {
+            slidesToShow: 1,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 3,
+          }
+        }
+      ]
+    });
+  }
+
+}
+
+
+// ФОРМА ОБРАТНОЙ СВЯЗИ НА СТРАНИЦЕ ФОРМЫ (FORM.HTML)
 {
   if (document.querySelector('.feedback')) {
     new Vue({
@@ -101,37 +89,8 @@ function closeNavbar() {
 }
 
 
-{
-  if (document.querySelector('.brands')) {
-    $('.brands__wrapper').slick({
-      infinite: false,
-      arrows: false,
-      slidesToShow: 4,
-      autoplay: true,
-      responsive: [
-        {
-          breakpoint: 400,
-          settings: {
-            slidesToShow: 1,
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 1100,
-          settings: {
-            slidesToShow: 3,
-          }
-        }
-      ]
-    });
-  }
-}
 
+// СЛАЙДЕР ОТЗЫВОВ (INDEX.HTML, ABOUT-US.HTML)
 {
   if (document.querySelector('.reviews')) {
     $('.reviews__body').slick({
@@ -165,33 +124,36 @@ function closeNavbar() {
   }
 }
 
+
+// СЛАЙДЕР СОТРУДНИКОВ (INDEX.HTML)
 {
-  // if (document.querySelector('.workers')) {
-  //   $('.workers__list').slick({
-  //     infinite: false,
-  //     arrows: false,
-  //     slidesToShow: 4,
-  //     // autoplay: true,
-  //     responsive: [
-  //       {
-  //         breakpoint: 650,
-  //         settings: {
-  //           slidesToShow: 1,
-  //           fade: true,
-  //           speed: 2000
-  //         }
-  //       },
-  //       {
-  //         breakpoint: 1100,
-  //         settings: {
-  //           slidesToShow: 2,
-  //         }
-  //       },
-  //     ]
-  //   });
-  // }
+  if (document.querySelector('.workers')) {
+    $('.workers__list').slick({
+      infinite: false,
+      arrows: false,
+      slidesToShow: 4,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 650,
+          settings: {
+            slidesToShow: 1,
+            fade: true,
+            speed: 2000
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+      ]
+    });
+  }
 }
 
+// МАСКА ДЛЯ НОМЕРА ТЕЛЕФОНА В МОДАЛКЕ
 {
   if (document.querySelector('.modal')) {
     const im = new Inputmask('+7 (999) 999-99-99', {
@@ -214,6 +176,8 @@ function closeNavbar() {
   }
 }
 
+
+// ФУНКЦИЯ ПЛАВНОГО СКРОЛЛА
 {
   $(function () {
     $("a[href^='#']").click(function () {
@@ -222,4 +186,73 @@ function closeNavbar() {
       return false;
     });
   });
+}
+
+
+
+
+// ОТКРЫВАНИЕ И ЗАКРЫВАНИЕ МЕНЮ
+
+const toggle = document.querySelector('.toggle'),
+  menu = document.querySelector('.page-nav__inner');
+
+toggle.addEventListener('click', function () {
+  if (!toggle.classList.contains('toggle--opened')) {
+    toggle.classList.add('toggle--opened');
+
+    menu.classList.add('page-nav__inner--active');
+
+    freeze();
+
+    return;
+  }
+
+  toggle.classList.remove('toggle--opened');
+
+  menu.classList.remove('page-nav__inner--active');
+
+  unfreeze();
+})
+
+// СКРИПТ ЗАМОРАЖИВАЕТ СТРАНИЧУ ЗАПРЕЩАЯ СКРОЛЛ
+
+function freeze() {
+  const html = document.querySelector('html');
+
+  if (html.style.position !== 'fixed') {
+    const top = html.scrollTop ? html.scrollTop : document.querySelector('body').scrollTop;
+
+    if (window.innerWidth > html.innerWidth) {
+      html.style.overflowY = 'scroll';
+    }
+
+
+    Object.assign(html.style, {
+      width: '100%',
+      height: '100%',
+      position: 'fixed',
+      top: -top,
+    })
+  }
+};
+
+
+// СКРИПТ РАЗМОРАЖИВАЕТ СТРАНИЦУ
+
+function unfreeze() {
+  const html = document.querySelector('html');
+
+  if (html.style.position === 'fixed') {
+    html.style.position = 'static';
+
+    html.scrollTop = -parseInt(html.style.top = '10');
+
+    Object.assign(html.style, {
+      position: '',
+      width: '',
+      height: '',
+      top: '',
+      'overflow-y': '',
+    })
+  }
 }

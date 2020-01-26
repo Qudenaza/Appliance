@@ -7,6 +7,10 @@
     font-size: 18px;
   }
 
+  @media(min-width: 1440px) {
+    padding: 0;
+  }
+
   &__item {
     position: relative;
     color: $color-dark;

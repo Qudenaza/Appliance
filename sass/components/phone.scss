@@ -1,0 +1,101 @@
+.phone {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+
+  background: rgba($color-blue, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 5px $color-blue;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+
+  &__image {
+    animation: tossing 5s ease infinite;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  max-width: 200px;
+  padding: 10px;
+  left: -160px;
+  top: 80px;
+
+  background: $color-black;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 13px;
+    top: -10px;
+    right: 8px;
+
+    background: url('../images/icon-triangle.svg') no-repeat;
+  }
+
+  &--visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__text {
+    color: $color-white;
+  }
+}
+
+@keyframes tossing {
+  0% {
+    transform: rotate(0);
+  }
+
+  80% {
+    transform: rotate(0);
+  }
+
+  82% {
+    transform: rotate(-8deg);
+  }
+
+  84% {
+    transform: rotate(8deg);
+  }
+
+  86% {
+    transform: rotate(-8deg);
+  }
+
+  88% {
+    transform: rotate(8deg);
+  }
+
+  90% {
+    transform: rotate(-8deg);
+  }
+
+  92% {
+    transform: rotate(8deg);
+  }
+
+  94% {
+    transform: rotate(-8deg);
+  }
+
+  96% {
+    transform: rotate(8deg);
+  }
+
+  98% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}

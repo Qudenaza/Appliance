@@ -25,9 +25,14 @@
     border-radius: 5px;
     box-shadow: 0 0 10px 0 rgba($color-dark, 0.4);
     text-decoration: none;
+    transition: all 0.3s ease;
 
     &:not(:last-child) {
       margin-bottom: 20px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
     }
 
     &--fridge {
@@ -47,6 +52,16 @@
 
     &--conditioner {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/conditioner.jpg');
+      background-size: cover;
+    }
+
+    &--cooktop {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/cooktop.jpg');
+      background-size: cover;
+    }
+
+    &--heat {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/heat.jpg');
       background-size: cover;
     }
   }

@@ -5,7 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
@@ -30,35 +37,46 @@
       </svg>
     </div>
   </div>
-  <header class="header header--form">
-    <nav class="page-nav page-nav--closed">
-      <div class="container page-nav__container">
-        <a href="index.html" class="page-nav__logo">
-          <img src="images/logo.svg" alt="Логотип сайта" class="page-nav__pic">
-        </a>
-        <button class="page-nav__toggle" title="Открытие и закрытие меню">
-          <span class="visually-hidden">Меню</span>
-          <span class="page-nav__burger"></span>
+  <header class="page-header">
+    <nav class="page-nav">
+      <div class="container page-nav__wrapper">
+        <button class="toggle page-nav__toggle" title="Открытие и закрытие меню">
+          <span class="toggle__line toggle__line--top"></span>
+          <span class="toggle__line"></span>
+          <span class="toggle__line toggle__line--bottom"></span>
         </button>
-        <div class="page-nav__wrapper">
+        <a href="index.html" class="page-nav__logo">
+          <img class="page-nav__icon" src="images/page-logo.svg" alt="Логотип сайта">
+        </a>
+        <a class="phone page-nav__phone" href="tel:79874242881" title="Позвоните нам">
+          <img class="phone__image" src="images/icon-phone.svg" alt="Иконка телефона">
+        </a>
+        <div class="page-nav__inner">
           <ul class="page-nav__list">
-            <li class="page-nav__item page-nav__item--active"><a href="#"
-                class="page-nav__link page-nav__link--1">Главная</a></li>
-            <li class="page-nav__item"><a href="about-us.html" class="page-nav__link page-nav__link--2">О компании</a>
+            <li class="page-nav__item">
+              <a href="index.html" class="page-nav__link">Главная</a>
             </li>
-            <li class="page-nav__item"><a href="#contacts" class="page-nav__link page-nav__link--3">Контакты</a></li>
-            <li class="page-nav__item"><a href="price-list.html" class="page-nav__link page-nav__link--4">Прайс-лист</a>
+            <li class="page-nav__item">
+              <a href="about-us.html" class="page-nav__link">О компании</a>
+            </li>
+            <li class="page-nav__item">
+              <a href="repair.html" class="page-nav__link">Услуги</a>
+            </li>
+            <li class="page-nav__item">
+              <a href="price-list.html" class="page-nav__link">Прайс-лист</a>
+            </li>
+            <li class="page-nav__item">
+              <a href="contacts.html" class="page-nav__link">Контакты</a>
             </li>
           </ul>
         </div>
-      </div>
     </nav>
   </header>
   <main class="main-content main-content--form">
     <div class="container">
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Главная</a></li>
-        <li class="breadcrumbs__item">Форма обратной связи</li>
+        <li class="breadcrumbs__item">Обратная связь</li>
       </ul>
     </div>
     <section class="feedback">
@@ -146,17 +164,18 @@
         <div class="footer__col">
           <h3 class="footer__title">Мы ремонтируем</h3>
           <ul class="footer__list">
-            <li class="footer__item"><a href="#" class="footer__link">Кондиционеры</a></li>
-            <li class="footer__item"><a href="#" class="footer__link">Холодильники</a></li>
-            <li class="footer__item"><a href="#" class="footer__link">Тепловые завесы</a></li>
-            <li class="footer__item"><a href="#" class="footer__link">Стиральные машины</a></li>
-            <li class="footer__item"><a href="#" class="footer__link">Электрические плиты</a></li>
+            <li class="footer__item"><a href="repair.html#conditioner" class="footer__link">Кондиционеры</a></li>
+            <li class="footer__item"><a href="repair.html#fridge" class="footer__link">Холодильники</a></li>
+            <li class="footer__item"><a href="repair.html#heat" class="footer__link">Тепловые завесы</a></li>
+            <li class="footer__item"><a href="repair.html#washer" class="footer__link">Стиральные машины</a></li>
+            <li class="footer__item"><a href="repair.html#dishwasher" class="footer__link">Посудомоечные машины</a></li>
+            <li class="footer__item"><a href="repair.html#cooktop" class="footer__link">Электрические плиты</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h3 class="footer__title">Обратная связь</h3>
           <p class="footer__text">Вы можете оставить онлайн заявку и мы обязательно с вами свяжемся</p>
-          <a href="#" class="footer__btn base-button">Оставить заявку</a>
+          <a href="contacts.html" class="footer__btn base-button">Оставить заявку</a>
         </div>
         <div class="footer__col" id="contacts">
           <h3 class="footer__title">Контакты</h3>
